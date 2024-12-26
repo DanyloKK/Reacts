@@ -1,35 +1,46 @@
 import React, {Component} from "react";
-import Sad from "../../assets/img/free-sticker-sad-8073615.png"
-import Angry from "../../assets/img/free-sticker-angry-8073598.png"
-import Lover from "../../assets/img/free-sticker-in-love-6983868.png"
-import Kiss from "../../assets/img/free-sticker-kiss-8073609.png"
-import Wink from "../../assets/img/free-sticker-wink-8445936.png"
+import Sad from "../../assets/img/sad.png";
+import Angry from "../../assets/img/angry.png";
+import Lover from "../../assets/img/lover.png";
+import Kiss from "../../assets/img/kiss.png";
+import Wink from "../../assets/img/wink.png";
+import Smiles from "../Smiles/Smiles"
 
 class Main extends Component {
 
     render() {
         return (
             <div className="container main">
-                <div>
-                    <img onClick={this.props.sad} src={Sad} alt="Sad"/>
-                    <span>{this.props.first}</span>
-                </div>
-                <div>
-                    <img onClick={this.props.angry} src={Angry} alt="Sad"/>
-                    <span>{this.props.second}</span>
-                </div>
-                <div>
-                    <img onClick={this.props.lover} src={Lover} alt="Sad"/>
-                    <span>{this.props.third}</span>
-                </div>
-                <div>
-                    <img onClick={this.props.kiss} src={Kiss} alt="Sad"/>
-                    <span>{this.props.fourth}</span>
-                </div>
-                <div>
-                    <img onClick={this.props.wink} src={Wink} alt="Sad"/>
-                    <span>{this.props.fifth}</span>
-                </div>
+                <Smiles
+                    func={this.props.func}
+                    count={this.props.first}
+                    smileName="sadCount"
+                    imgSrc={Sad}
+                    alt="Sad" />
+                <Smiles
+                    func={this.props.func}
+                    count={this.props.second}
+                    smileName="angryCount"
+                    imgSrc={Angry}
+                    alt="Angry" />
+                <Smiles
+                    func={this.props.func}
+                    count={this.props.third}
+                    smileName="loverCount"
+                    imgSrc={Lover}
+                    alt="Lover" />
+                <Smiles
+                    func={this.props.func}
+                    count={this.props.fourth}
+                    smileName="kissCount"
+                    imgSrc={Kiss}
+                    alt="Kiss" />
+                <Smiles
+                    func={this.props.func}
+                    count={this.props.fifth}
+                    smileName="winkCount"
+                    imgSrc={Wink}
+                    alt="Wink" />
             </div>
         )
     }
