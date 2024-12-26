@@ -1,0 +1,9 @@
+.main{
+  display: flex;
+}
+.main div img{
+  width: 50%;
+}
+.container.footer{
+  text-align: center;
+}
