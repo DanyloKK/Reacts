@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 
 
-class Smiles extends Component {
-    render() {
-        const { func, smileName, count, imgSrc, alt } = this.props;
+const Smiles = (props) => {
+        const { func, smileName, count, imgSrc, alt } = props;
         return (
             <>
               <div>
@@ -12,7 +11,7 @@ class Smiles extends Component {
               </div>
             </>
         )
-    }
+
 }
 
 export default Smiles;

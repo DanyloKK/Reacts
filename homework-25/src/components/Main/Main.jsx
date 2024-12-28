@@ -6,44 +6,42 @@ import Kiss from "../../assets/img/kiss.png";
 import Wink from "../../assets/img/wink.png";
 import Smiles from "../Smiles/Smiles"
 
-class Main extends Component {
-
-    render() {
+const Main = (props) => {
+    const {first,second,third,fourth,fifth,func} = props;
         return (
             <div className="container main">
                 <Smiles
-                    func={this.props.func}
-                    count={this.props.first}
+                    func={func}
+                    count={first}
                     smileName="sadCount"
                     imgSrc={Sad}
-                    alt="Sad" />
+                    alt="Sad"/>
                 <Smiles
-                    func={this.props.func}
-                    count={this.props.second}
+                    func={func}
+                    count={second}
                     smileName="angryCount"
                     imgSrc={Angry}
-                    alt="Angry" />
+                    alt="Angry"/>
                 <Smiles
-                    func={this.props.func}
-                    count={this.props.third}
+                    func={func}
+                    count={third}
                     smileName="loverCount"
                     imgSrc={Lover}
-                    alt="Lover" />
+                    alt="Lover"/>
                 <Smiles
-                    func={this.props.func}
-                    count={this.props.fourth}
+                    func={func}
+                    count={fourth}
                     smileName="kissCount"
                     imgSrc={Kiss}
-                    alt="Kiss" />
+                    alt="Kiss"/>
                 <Smiles
-                    func={this.props.func}
-                    count={this.props.fifth}
+                    func={func}
+                    count={fifth}
                     smileName="winkCount"
                     imgSrc={Wink}
-                    alt="Wink" />
+                    alt="Wink"/>
             </div>
         )
-    }
 }
 
 export default Main;

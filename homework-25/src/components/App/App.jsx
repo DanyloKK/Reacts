@@ -1,115 +1,125 @@
-import React, {Component} from "react";
+import React, {useState, useEffect} from "react";
 import '../../styles/App.css';
 import Header from "../Header/Header"
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
 import Smiles from "../Smiles/Smiles";
 
-class App extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
+const App = () => {
+
+    const [state, setState] = useState({
+        sadCount: 0,
+        angryCount: 0,
+        loverCount: 0,
+        kissCount: 0,
+        winkCount: 0,
+        result: 0,
+        winner: "",
+        showResult: false,
+        todos: [],
+    })
+
+    const clearResult = () => {
+        localStorage.removeItem("items")
+        setState((prevState) => ({
             sadCount: 0,
-            angryCount:0,
-            loverCount:0,
-            kissCount:0,
-            winkCount:0,
+            angryCount: 0,
+            loverCount: 0,
+            kissCount: 0,
+            winkCount: 0,
             result: 0,
             winner: "",
             showResult: false,
             todos: [],
-        };
+        }))
     }
 
-    clearResult = () => {
-        localStorage.removeItem("items")
-        this.setState({
-            result:0,
-            winner: "",
-            showResult: false,
-            todos:[],
-        })
-    }
-
-    findWinner = () => {
+    const findWinner = () => {
         const maxVotesValue = Math.max(
-            this.state.sadCount,
-            this.state.angryCount,
-            this.state.loverCount,
-            this.state.kissCount,
-            this.state.winkCount
+            state.sadCount,
+            state.angryCount,
+            state.loverCount,
+            state.kissCount,
+            state.winkCount
         );
-        const maxVotes = Object.keys(this.state).reduce((acc, key) => {
-            if (this.state[key] > this.state[acc]) {
+        const maxVotes = Object.keys(state).reduce((acc, key) => {
+            if (state[key] > state[acc]) {
                 return key;
             }
             return acc;
         }, "sadCount");
-        this.setState({
+        setState((prevState) => ({
+            ...prevState,
             result: maxVotesValue,
             winner: maxVotes,
-        })
+        }));
 
     }
-    toggleResult = () => {
-        this.setState((prevState) => {
-            return {
-                showResult: !prevState.showResult,
-            }
-        })
+    const toggleResult = () => {
+        setState((prevState) => ({
+            ...prevState,
+            showResult: !prevState.showResult,
+        }));
     }
 
-    saveData = () => {
+    const saveData = () => {
         const items = JSON.parse(localStorage.getItem("items"));
-        const newArray = items ? [...items, this.state.result, this.state.winner] : [this.state.result, this.state.winner]
-        this.setState({
+        const newArray = items ? [...items, state.result, state.winner] : [state.result, state.winner]
+        setState((prevState) => ({
+            ...prevState,
             todos: newArray,
-        })
+        }));
         localStorage.setItem("items", JSON.stringify(newArray))
 
     }
 
-
-    componentDidMount() {
+    useEffect(() => {
         const items = localStorage.getItem("items");
         const todos = items ? JSON.parse(items) : [];
-        this.setState({
+        setState((prevState) => ({
+            ...prevState,
             todos,
-        })
-    }
+        }));
+    }, [])
 
-    smileCounter = (smileName) => {
-        this.setState((prevState) => ({
+
+    const smileCounter = (smileName) => {
+        setState((prevState) => ({
+            ...prevState,
             [smileName]: prevState[smileName] + 1,
-        }), this.findWinner);
+        }));
     };
+    useEffect(() => {
+        findWinner();
+    }, [state.sadCount, state.angryCount, state.loverCount, state.kissCount, state.winkCount]);
 
-    render() {
-        const {sadCount, angryCount, loverCount, kissCount, winkCount, result, winner, showResult} = this.state;
+    useEffect(() => {
+        localStorage.setItem("items", JSON.stringify(state.todos));
+    }, [state.todos]);
+    const {sadCount, angryCount, loverCount, kissCount, winkCount, result, winner, showResult} = state;
 
-        return (
-            <React.StrictMode>
-                <Header/>
-                <Main
-                    first={sadCount}
-                    second={angryCount}
-                    third={loverCount}
-                    fourth={kissCount}
-                    fifth={winkCount}
-                    func={this.smileCounter}
-                />
-                <Footer result={result}
-                        winner={winner}
-                        showResult={showResult}
-                        findWinner={this.findWinner}
-                        toggleResult={this.toggleResult}
-                        clearResult={this.clearResult}
-                        saveData={this.saveData}
-                        todos={this.state.todos}
-                />
-            </React.StrictMode>
-        );
-    }
+    return (
+        <React.StrictMode>
+            <Header/>
+            <Main
+                first={sadCount}
+                second={angryCount}
+                third={loverCount}
+                fourth={kissCount}
+                fifth={winkCount}
+                func={smileCounter}
+            />
+            <Footer result={result}
+                    winner={winner}
+                    showResult={showResult}
+                    findWinner={findWinner}
+                    toggleResult={toggleResult}
+                    clearResult={clearResult}
+                    saveData={saveData}
+                    todos={state.todos}
+            />
+        </React.StrictMode>
+    );
 }
 
 export default App;
