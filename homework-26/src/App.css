@@ -1,38 +1,111 @@
-.App {
-  text-align: center;
+:root {
+    --bg-light: #ffffff;
+    --bg-dark: #1e1e1e;
+    --text-light: #000000;
+    --text-dark: #ffffff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+    background-color: var(--bg-light);
+    color: var(--text-light);
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body.dark {
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.theme-switch {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--bg-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s;
 }
 
-.App-link {
-  color: #61dafb;
+
+.circle {
+    position: relative;
+    width: 30px;
+    height: 30px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    transition: opacity 0.3s;
+}
+
+.sun {
+    opacity: 1;
+}
+
+.moon {
+    opacity: 0;
+}
+.showMoon{
+    opacity: 1;
+}
+.hideSun{
+    opacity: 0;
+}
+
+
+
+.container.navs {
+    display: flex;
+    justify-content: space-around;
+}
+
+.container.navs {
+    margin-top: 50px;
+}
+
+.container-contacts {
+    max-width: 800px;
+    text-align: center;
+    top: 25px;
+    position: relative;
+    margin: auto;
+    padding: 50px 0 25px 0;
+    border: 5px saddlebrown dashed;
+}
+
+.container-about {
+    position: relative;
+    top: 25px;
+    max-width: 800px;
+    text-align: center;
+    margin: auto;
+    padding: 50px 0 25px 0;
+    border: 5px saddlebrown dashed;
+}
+
+.container-contacts__title {
+    font-size: 15px;
+}
+
+.container-contacts__paragraph {
+    font-size: 12px;
+}
+
+.container-about__title {
+    font-size: 15px;
+}
+
+.container-about__paragraph {
+    font-size: 12px;
 }
