@@ -1,0 +1,10 @@
+{
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "scripts": {
+    "start:react": "npm run dev --prefix frontEnd",
+    "start:backend": "nodemon backend/Server.js",
+    "start": "concurrently \"npm run start:react\" \"npm run start:backend\""
+  }
+}
