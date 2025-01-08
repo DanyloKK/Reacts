@@ -6,26 +6,28 @@ import Lists from "../List/List.jsx";
 
 function App() {
     const [todos, setTodos] = useState([]);
-    useEffect(() => {
-        const fetchData = async () => {
-            const response = await fetch("http://localhost:8080/todos");
-            const data = await response.json();
-            console.log("Fetched Todos:", data);
-            setTodos(data);
-        };
-        fetchData();
-    }, []);
 
-    const handleTodo = (task) => {
+    const fetchData = async () => {
+        const response = await fetch("http://localhost:8080/todos");
+        const data = await response.json();
+        console.log("Fetched Todos:", data);
+        setTodos(data);
+    };
+    useEffect(() => {
+        fetchData();
+    }, [])
+
+    const handleTodo = async (task) => {
         const newTodo = {
             todos: task,
-            checked: false,
+            checked: true,
         }
         setTodos((prevState) => {
             const updatedTodos = [...prevState, newTodo];
-            handlePost(newTodo);
             return updatedTodos
         });
+        await handlePost(newTodo);
+        fetchData();
         console.log(todos);
     };
     const handlePost = async (newTodo) => {
@@ -42,17 +44,26 @@ function App() {
         }
     }
     const handleDelete = async (id) => {
+        setTodos((prevState) => {
+            const updatedTodos = prevState.filter((item) => item._id !== id);
+            console.log('Обновленное состояние:', updatedTodos);
+            return updatedTodos;
+        });
         try {
             const response = await fetch(`http://localhost:8080/todos/${id}`, {
                 method: "DELETE",
             })
+            if (!response.ok) {
+                throw new Error("Не удалось удалить задачу с сервера");
+            }
+            console.log('Удаление на сервере прошло успешно');
+
             const data = await response.json();
             console.log(data)
         } catch (err) {
             console.log(err);
         }
     }
-
 
 
     return (

@@ -35,7 +35,7 @@ const todoSchema = new mongoose.Schema({
 const Todo = mongoose.model('Todo', todoSchema);
 
 const newTodo = new Todo({
-    list: "Learn MongoDB",
+    todos: "Learn MongoDB",
     checked: false,
 });
 
