@@ -1,0 +1,12 @@
+body{
+  display: flex;
+
+}
+
+.App{
+  padding: 10px;
+  position: absolute;
+  left:50%;
+  border:1px solid black;
+  justify-content: center;
+}
