@@ -1,0 +1,65 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #87CEEB; /* Голубой фон */
+}
+.Main {
+  text-align: center;
+  margin-top: 20px;
+}
+.input__list {
+  width: 20%;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #008CBA; /* Голубой фон кнопки */
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #005f73; /* Более тёмный цвет при наведении */
+}
+
+.todo-list {
+  margin-top: 20px;
+  margin-right: 30px;
+}
+.delete__button {
+  padding: 10px 28px;
+}
+
+.todo-item {
+  background-color: #FAEBD7; /* Бежевый фон элементов */
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 18px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  display: inline-block;
+  width: 22%;
+}
+
+footer {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 16px;
+}
