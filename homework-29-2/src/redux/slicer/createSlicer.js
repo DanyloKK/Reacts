@@ -2,16 +2,27 @@ import {createSlice} from "@reduxjs/toolkit";
 
 const slicerList = createSlice({
     name: "list",
-    initialState: {
-        todos: [],
-    },
+    initialState: [],
     reducers: {
         addTodo: (state, action) => {
-            state.todos.push(action.payload)
+            const newTodo = {
+                id: Date.now(),
+                text: action.payload,
+                completed: false,
+            };
+            state.push(newTodo);
+            console.log(newTodo);
         },
         deleteTodo: (state,action) => {
-            state.todos = state.todos.filter(item => item !== action.payload);
+            return state.filter(item => item.id !== action.payload);
         },
+        editTodo:(state,action) =>{
+             const {id, newText} = action.payload;
+             const todo = state.find((item) => item.id === id)
+             if(todo){
+                 todo.text = newText
+             }
+        }
     }
 })
 export const {addTodo,deleteTodo,editTodo} = slicerList.actions;

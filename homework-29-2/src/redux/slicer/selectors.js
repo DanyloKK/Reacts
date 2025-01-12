@@ -1,8 +1,8 @@
 export default {
     length:{
-        value:state => state.list.todos.length,
+        value:state => state.list.length,
     },
     element:{
-        value:state => state.list.todos,
+        value:state => state.list,
     }
 }
