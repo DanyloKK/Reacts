@@ -35,7 +35,7 @@ const List = () => {
         dispatch(toggleCompleted({id,completed: !completed}))
     }
     return (
-        <ul>
+        <ul className="main__list">
             {todoItems.map((item) => {
                 return (
                     <div  className="todo-block" key={item.id}>

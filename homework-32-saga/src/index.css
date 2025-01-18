@@ -72,6 +72,7 @@ button:focus-visible {
 }
 .form{
   width: 600px;
+  position: relative;
 }
 .todo-list{
   display: inline-block;
@@ -92,4 +93,13 @@ button:focus-visible {
 }
 .delete-todo{
   align-self: end;
+}
+.error-text {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
+.input-error {
+  border: 1px solid red;
+  background-color: #ffe6e6;
 }
