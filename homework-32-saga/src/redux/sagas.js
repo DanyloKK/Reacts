@@ -4,14 +4,16 @@ import {
     deleteTodo,
     fetchTodo,
     toggleCompletedTask,
-    updateTodo
+    updateTodo,
+    getSwapiData,
 } from "./slices/todoSlicer";
 import {
     watchToggleSaga,
     watchUpdateItemSaga,
     watchFetchItems,
     watchDeleteItemSaga,
-    watchAddItems
+    watchAddItems,
+    watchSwapiFetchData
 } from "./watchersTodo.js";
 
 function fetchHelper(url, options) {
@@ -22,6 +24,14 @@ function fetchHelper(url, options) {
 
         return response.json();
     });
+}
+export function* addSwapiItem(action) {
+    try{
+        const todo = yield call(fetchHelper,action.payload)
+        yield put(getSwapiData(todo))
+    }catch(error){
+        console.log(error);
+    }
 }
 
 export function* addItemSaga(action) {
@@ -96,5 +106,5 @@ export function* toggleItemSaga(action) {
 }
 
 export default function* rootSaga() {
-    yield all([watchAddItems(), watchDeleteItemSaga(), watchFetchItems(), watchUpdateItemSaga(), watchToggleSaga()]);
+    yield all([watchAddItems(), watchDeleteItemSaga(), watchFetchItems(), watchUpdateItemSaga(), watchToggleSaga(),watchSwapiFetchData()]);
 }

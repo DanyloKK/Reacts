@@ -2,7 +2,8 @@ import {createSlice} from "@reduxjs/toolkit";
 
 const initialState = {
     todoItem: [],
-    isLoading: false
+    isLoading: false,
+    characterInfo:[],
 }
 const todosSlice = createSlice({
     name: "todos",
@@ -53,7 +54,15 @@ const todosSlice = createSlice({
                 }
                 return item;
             })
-        }
+        },
+        fetchSwapiData: (state) => {
+            state.isLoading = true;
+        },
+        getSwapiData: (state,action) => {
+            state.characterInfo = [];
+            state.isLoading = false;
+            state.characterInfo.push(action.payload)
+        },
     }
 })
 export const {
@@ -67,5 +76,8 @@ export const {
     updateItems,
     toggleCompleted,
     toggleCompletedTask,
+    fetchSwapiData,
+    getSwapiData,
+    deleteSwapiData,
 } = todosSlice.actions
 export default todosSlice

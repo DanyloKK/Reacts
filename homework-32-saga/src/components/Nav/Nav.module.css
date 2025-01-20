@@ -1,0 +1,9 @@
+.navLinks{
+    font-size: 24px;
+    color: black;
+}
+.navLinks:hover{
+    color: red;
+    transition: 0.3s;
+    transform: scale(1.2);
+}

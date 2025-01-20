@@ -1,3 +1,6 @@
 export default{
-    todoItems: state => state.todos.todoItem
+    todoItems: state => state.todos.todoItem,
+    characterInfo:{
+        data:state => state.todos.characterInfo
+    }
 }

@@ -1,0 +1,13 @@
+.footer {
+    background-color: paleturquoise;
+    max-width: 1280px;
+    justify-content: center;
+}
+.footerList{
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 35px;
+}
+.footerItem{
+    list-style: none;
+}

@@ -1,0 +1,17 @@
+.section__info{
+    max-width: 1280px;
+    display:flex;
+    flex-wrap: wrap;
+}
+.section__info_heading{
+    width:50%;
+}
+.section__info_title{
+    color: orange;
+}
+.section__info_list{
+    text-align: left;
+}
+.section__info_list_item{
+    list-style: none;
+}

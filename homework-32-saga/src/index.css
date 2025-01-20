@@ -25,7 +25,6 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -102,4 +101,7 @@ button:focus-visible {
 .input-error {
   border: 1px solid red;
   background-color: #ffe6e6;
+}
+.main__container{
+  margin-top: 50px;
 }

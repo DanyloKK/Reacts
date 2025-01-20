@@ -1,0 +1,9 @@
+.swapiList {
+    text-align: left;
+    list-style: none;
+}
+.swapiTitle{
+    color:orange;
+    font-weight: bold;
+    font-size: 24px;
+}

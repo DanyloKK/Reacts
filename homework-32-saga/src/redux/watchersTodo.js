@@ -1,7 +1,10 @@
-import {addItem, deleteItem, fetchItems, toggleCompleted, updateItems} from "./slices/todoSlicer.js";
-import {toggleItemSaga,deleteItemSaga,fetchItemsSaga,updateItemSaga,addItemSaga} from "./sagas.js";
+import {addItem, deleteItem, fetchItems, toggleCompleted, updateItems,fetchSwapiData} from "./slices/todoSlicer.js";
+import {toggleItemSaga,deleteItemSaga,fetchItemsSaga,updateItemSaga,addItemSaga,addSwapiItem} from "./sagas.js";
 import {takeEvery } from 'redux-saga/effects';
 
+export function* watchSwapiFetchData(){
+    yield takeEvery(fetchSwapiData.type, addSwapiItem);
+}
 export function* watchToggleSaga(){
     yield takeEvery(toggleCompleted.type,toggleItemSaga)
 }
