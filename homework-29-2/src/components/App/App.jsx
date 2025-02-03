@@ -8,20 +8,7 @@ import List from '../List/List.jsx'
 
 
 const App = () => {
-    const dispatch = useDispatch();
-    const handleInputValue = (task) => {
-        dispatch(addTodo(task))
-    }
-    return (
-        <section className="App">
-            <Header/>
-            <Input handleInputValue={handleInputValue}/>
-            <List/>
-            <Footer/>
-        </section>
 
-
-    )
 }
 
 

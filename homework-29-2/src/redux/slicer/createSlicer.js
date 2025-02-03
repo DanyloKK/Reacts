@@ -12,6 +12,7 @@ const slicerList = createSlice({
             };
             state.push(newTodo);
             console.log(newTodo);
+            console.log(action.payload);
         },
         deleteTodo: (state,action) => {
             return state.filter(item => item.id !== action.payload);

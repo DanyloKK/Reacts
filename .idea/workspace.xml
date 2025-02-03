@@ -7,6 +7,12 @@
     <list default="true" id="627c661d-141b-42ed-8d51-5c07e13497e2" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/my-react-app/src/App.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework-25/src/components/App/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/homework-25/src/components/App/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework-26-2/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/homework-26-2/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework-29-2/src/components/App/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/homework-29-2/src/components/App/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework-29-2/src/redux/slicer/createSlicer.js" beforeDir="false" afterPath="$PROJECT_DIR$/homework-29-2/src/redux/slicer/createSlicer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework-32-saga/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/homework-32-saga/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework-32-saga/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/homework-32-saga/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-react-app" beforeDir="false" afterPath="$PROJECT_DIR$/my-react-app" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-react-app/src/components/App.test.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/my-react-app/src/components/footer/footer.jsx" beforeDir="false" />
@@ -16,6 +22,7 @@
       <change beforePath="$PROJECT_DIR$/my-react-app/src/components/setupTests.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/my-react-app/src/index.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/my-react-app/src/styles/Main.css" beforeDir="false" afterPath="$PROJECT_DIR$/my-react-app/src/styles/Main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vite-project/src/redux/slice/selectors.js" beforeDir="false" afterPath="$PROJECT_DIR$/vite-project/src/redux/slice/selectors.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +32,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
+        <option value="HTML File" />
         <option value="JSX File" />
+        <option value="package.json" />
+        <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -56,13 +66,17 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Jest.check 3 to be 9.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs.jest.jest_package&quot;: &quot;C:/Users/kovac/WebstormProjects/React/homework-32-saga/node_modules/jest&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2024.3\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
@@ -70,12 +84,31 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\kovac\WebstormProjects\React\homework-25\src\assets\img" />
-      <recent name="C:\Users\kovac\WebstormProjects\React\homework-26\src\components\App" />
-      <recent name="C:\Users\kovac\WebstormProjects\React\homework-26\src\assets\img" />
-      <recent name="C:\Users\kovac\WebstormProjects\React\homework-25\src\components\App" />
-      <recent name="C:\Users\kovac\WebstormProjects\React\homework-25\src\styles" />
+      <recent name="C:\Users\kovac\WebstormProjects\React\homework-32-saga\src\components\App" />
+      <recent name="C:\Users\kovac\WebstormProjects\React\homework-30\src\components" />
+      <recent name="C:\Users\kovac\WebstormProjects\React\homework-30\src\components\List" />
+      <recent name="C:\Users\kovac\WebstormProjects\React\homework-30\src\Redux" />
+      <recent name="C:\Users\kovac\WebstormProjects\React\homework-30\src\components\App" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="check 3 to be 9" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/homework-32-saga/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$/homework-32-saga" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/homework-32-saga/src/helpers/__tests__/functions.test.js" />
+      <test-names>
+        <test-name value="check 3 to be 9" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Jest.check 3 to be 9" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -106,6 +139,44 @@
       <workItem from="1735309411560" duration="11040000" />
       <workItem from="1735380377119" duration="5077000" />
       <workItem from="1735411311967" duration="2076000" />
+      <workItem from="1735554412019" duration="13718000" />
+      <workItem from="1735807506116" duration="4471000" />
+      <workItem from="1735851859733" duration="1449000" />
+      <workItem from="1735853335917" duration="2901000" />
+      <workItem from="1735986016520" duration="1923000" />
+      <workItem from="1735988632517" duration="4688000" />
+      <workItem from="1736007288819" duration="7663000" />
+      <workItem from="1736074472543" duration="4763000" />
+      <workItem from="1736161280970" duration="20700000" />
+      <workItem from="1736244838232" duration="7752000" />
+      <workItem from="1736341170930" duration="7191000" />
+      <workItem from="1736363805288" duration="5167000" />
+      <workItem from="1736424858929" duration="1367000" />
+      <workItem from="1736426369291" duration="13087000" />
+      <workItem from="1736539583875" duration="1066000" />
+      <workItem from="1736681288077" duration="8310000" />
+      <workItem from="1736700748318" duration="8595000" />
+      <workItem from="1736780403193" duration="2569000" />
+      <workItem from="1736932820536" duration="11444000" />
+      <workItem from="1737128458645" duration="11169000" />
+      <workItem from="1737148874940" duration="456000" />
+      <workItem from="1737197487562" duration="8530000" />
+      <workItem from="1737214479086" duration="2260000" />
+      <workItem from="1737362448239" duration="9182000" />
+      <workItem from="1737453134664" duration="743000" />
+      <workItem from="1737453899642" duration="2695000" />
+      <workItem from="1737485457237" duration="2659000" />
+      <workItem from="1737548486164" duration="598000" />
+      <workItem from="1737646260825" duration="207000" />
+      <workItem from="1737646987996" duration="17000" />
+      <workItem from="1737705450332" duration="21000" />
+      <workItem from="1738072227071" duration="269000" />
+      <workItem from="1738072523714" duration="312000" />
+      <workItem from="1738073017210" duration="284000" />
+      <workItem from="1738074062309" duration="2177000" />
+      <workItem from="1738077519808" duration="69000" />
+      <workItem from="1738077659953" duration="5000" />
+      <workItem from="1738078216945" duration="12000" />
     </task>
     <servers />
   </component>

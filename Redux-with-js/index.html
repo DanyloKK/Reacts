@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<span id="value">Amount:20</span>
+<button id="deposit">deposit</button>
+<button id="withdrawal">Withdrawal</button>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.2.1/redux.min.js"></script>
+
+<script src="index.js"></script>
+<script>
+
+    const Types = {
+        deposit: "DEPOSIT",
+        withdrawal: "WITHDRAWAL",
+    }
+    const initialValue = 20;
+    const store = Redux.createStore(Reducer);
+
+    function Reducer(state = initialValue, action) {
+        switch (action.type) {
+            case Types.deposit:
+                return state + action.payload;
+            case Types.withdrawal:
+                return state - action.payload;
+            case state === 0:
+                return state;
+        }
+    }
+
+    const actions = {type: "DEPOSIT", payload: 10}
+    const action2 = {type: "WITHDRAWAL", payload: 20};
+    document.getElementById("deposit").addEventListener("click", () => {
+        store.dispatch(actions);
+    })
+    document.getElementById("withdrawal").addEventListener("click", () => {
+        store.dispatch(action2);
+    })
+    const value = document.getElementById("value");
+    store.subscribe(() => {
+        const state = store.getState();
+        console.log(state);
+        value.textContent = store.getState();
+    })
+
+</script>
+</body>
+</html>

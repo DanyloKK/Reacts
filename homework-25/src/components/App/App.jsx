@@ -1,11 +1,28 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useReducer} from "react";
 import '../../styles/App.css';
 import Header from "../Header/Header"
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
 import Smiles from "../Smiles/Smiles";
 
+const initialState = {count: 0};
+
+const reduce = (state, action) => {
+    const handleSwitch = {
+        Increment: (state) => ({
+            count: state.count + 1
+        }),
+        Decrement: (state) => ({
+            count: state.count - 1
+        }),
+        Reset: (state) => ({count: 0}),
+    }
+    return handleSwitch[action.type] ? handleSwitch[action.type](state) : state;
+}
+
 const App = () => {
+
+    const [states, setStates] = useReducer(reduce, initialState)
 
     const [state, setState] = useState({
         sadCount: 0,
@@ -100,6 +117,12 @@ const App = () => {
 
     return (
         <React.StrictMode>
+            <div>
+                <h1>Count: {states.count}</h1>
+                <button onClick={() => setStates({type: "Increment"})}>+</button>
+                <button onClick={() => setStates({type: "Decrement"})}>-</button>
+                <button onClick={() => setStates({type: "Reset"})}>Reset</button>
+            </div>
             <Header/>
             <Main
                 first={sadCount}
