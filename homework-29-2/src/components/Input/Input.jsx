@@ -21,7 +21,7 @@ const Input = (props) => {
                 placeholder="Enter the task please..."
                 value={task}
             />
-            <button onClick={handleAddTodo}>Add task</button>
+            <button onClick={()=> handleAddTodo(task)}>Add task</button>
         </>
     )
 }
